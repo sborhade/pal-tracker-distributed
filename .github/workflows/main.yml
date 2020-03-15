@@ -1,4 +1,4 @@
-name: Pal Tracker Distributed Pipeline
+name: Pal Tracker Distributed Pipeline 1
 
 on:
   push:
@@ -16,9 +16,9 @@ jobs:
       - name: Create test database
         run: |
           mysql -uroot -proot < databases/create_databases.sql
-          ./gradlew testMigrate
+          gradle testMigrate
       - name: Build with Gradle
-        run: ./gradlew clean build
+        run: gradle clean build
       - name: Publish allocations artifact
         uses: actions/upload-artifact@v1
         with:
